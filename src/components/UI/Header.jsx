@@ -1,8 +1,6 @@
 export default function Header({ onToggleDarkMode, isDarkMode }) {
   return (
-    <header
-      className={`flex justify-between items-center p-4 transition-colors duration-300 `}
-    >
+    <header className={`flex justify-between items-center p-4 `}>
       <div className="flex items-center gap-2 text-3xl">
         <i className="fas fa-snowflake"></i>
         <div>
@@ -24,7 +22,7 @@ export default function Header({ onToggleDarkMode, isDarkMode }) {
       </div>
       <button
         onClick={onToggleDarkMode}
-        className={`border p-1 text-xs rounded-lg transition-colors duration-300 ${
+        className={`border p-1 text-xs rounded-lg ${
           isDarkMode
             ? "border-blue-200 hover:bg-blue-700 text-blue-200"
             : "border-blue-900 hover:bg-blue-300 text-blue-900"
