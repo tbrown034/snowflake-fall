@@ -6,9 +6,18 @@ import GameBoard from "./components/UI/GameBoard";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode); // Ensuring the state is toggled based on the previous state
+  };
+
+  const startGame = () => {
+    setGameStarted(true);
+  };
+
+  const backToStart = () => {
+    setGameStarted(false);
   };
 
   return (
@@ -18,9 +27,13 @@ function App() {
       }`}
     >
       <Header onToggleDarkMode={toggleDarkMode} isDarkMode={darkMode} />
-      <Main />
-      <GameBoard />
-      <Footer isDarkMode={darkMode} />
+      {gameStarted ? (
+        <GameBoard onBackToStart={backToStart} />
+      ) : (
+        <Main onStartGame={startGame} />
+      )}
+
+      <Footer />
     </div>
   );
 }
