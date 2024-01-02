@@ -6,14 +6,14 @@ export default function Header({ onToggleDarkMode, isDarkMode }) {
         <div>
           <span
             className={`font-semibold ${
-              isDarkMode ? "text-blue-100" : "text-blue-900"
+              isDarkMode ? "text-blue-200" : "text-blue-900"
             }`}
           >
             SnowFlake
           </span>
           <span
             className={`font-light ${
-              isDarkMode ? "text-blue-200" : "text-blue-800"
+              isDarkMode ? "text-blue-200" : "text-blue-900"
             }`}
           >
             Fall
