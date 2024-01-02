@@ -15,7 +15,7 @@ function App() {
   return (
     <div
       className={`min-h-screen p-4 flex flex-col justify-between ${
-        darkMode ? "bg-blue-900 text-white" : "bg-blue-300 text-blue-900"
+        darkMode ? "bg-blue-900 text-blue-200" : "bg-blue-200 text-blue-900"
       } `}
     >
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
@@ -23,7 +23,7 @@ function App() {
       <Main />
 
       <GameBoard />
-      <Footer />
+      <Footer darkMode={darkMode} />
     </div>
   );
 }
