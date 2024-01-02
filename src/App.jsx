@@ -1,13 +1,27 @@
+import React, { useState } from "react";
 import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import Main from "./components/UI/Main";
 import GameBoard from "./components/UI/GameBoard";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false); // State to manage dark mode
+
+  // Function to toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="min-h-screen p-4 bg-sky-900 text-sky-50  flex center flex-col justify-between">
-      <Header />
+    <div
+      className={`min-h-screen p-4 flex flex-col justify-between ${
+        darkMode ? "bg-blue-900 text-white" : "bg-blue-300 text-blue-900"
+      } `}
+    >
+      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+
       <Main />
+
       <GameBoard />
       <Footer />
     </div>
