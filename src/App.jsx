@@ -9,7 +9,7 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode); // Ensuring the state is toggled based on the previous state
+    setDarkMode((prevMode) => !prevMode);
   };
 
   const startGame = () => {
@@ -28,11 +28,10 @@ function App() {
     >
       <Header onToggleDarkMode={toggleDarkMode} isDarkMode={darkMode} />
       {gameStarted ? (
-        <GameBoard onBackToStart={backToStart} />
+        <GameBoard onBackToStart={backToStart} isDarkMode={darkMode} />
       ) : (
-        <Main onStartGame={startGame} />
+        <Main onStartGame={startGame} isDarkMode={darkMode} />
       )}
-
       <Footer />
     </div>
   );

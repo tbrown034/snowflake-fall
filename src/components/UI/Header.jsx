@@ -22,13 +22,13 @@ export default function Header({ onToggleDarkMode, isDarkMode }) {
       </div>
       <button
         onClick={onToggleDarkMode}
-        className={`border p-1 text-xs rounded-lg transition-colors duration-300 ${
+        className={`border p-2 text-sm rounded-lg transition-colors duration-300 ${
           isDarkMode
             ? "border-blue-300 hover:bg-blue-300 hover:text-blue-900 text-blue-300"
             : "border-blue-800 hover:bg-blue-800 hover:text-blue-200 text-blue-800"
         }`}
       >
-        {isDarkMode ? "Switch to Light" : "Switch to Dark"}
+        {isDarkMode ? "Light Mode" : "Dark Mode"}
       </button>
     </header>
   );
